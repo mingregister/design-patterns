@@ -19,6 +19,11 @@ public class SmsSender implements Sender {
     }  
 }  
 
+// 再提供一个接口
+public interface Provider {  
+    public Sender produce();  
+}  
+
 // 两个工厂类
 public class SendMailFactory implements Provider {  
       
@@ -36,10 +41,7 @@ public class SendSmsFactory implements Provider{
     }  
 } 
 
-// 再提供一个接口
-public interface Provider {  
-    public Sender produce();  
-}  
+
 
 // 测试类
 public class Test {  
