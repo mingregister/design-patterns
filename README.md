@@ -11,6 +11,8 @@ https://blog.csdn.net/weixin_42139375/article/details/82503232
 
 https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
+### python代码: 
+    (精通Python设计模式)[https://github.com/youngsterxyf/mpdp-code]
 
 ### 六大原则
 总原则：开闭原则（Open Close Principle）
