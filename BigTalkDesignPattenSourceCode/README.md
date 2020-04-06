@@ -1,0 +1,1 @@
+此目录下的代码均来自于书籍《大话设计模式》： https://files-cdn.cnblogs.com/files/cj723/BigTalkDesignPatternSourceCode.rar
