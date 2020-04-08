@@ -62,8 +62,4 @@ https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
 
 
-<<<<<<< HEAD
-##### git test confict 1 ############
-=======
 @@@@@@@@ hello git confict test 2 world @@@@@@@@@@@@@
->>>>>>> bdc4cd370d47d3ad5212f2311de7c83695d8b269
