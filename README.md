@@ -57,3 +57,9 @@ https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
 6、合成复用原则（Composite Reuse Principle）
 原则是尽量首先使用合成/聚合的方式，而不是使用继承....
+
+
+
+
+
+##### git test confict 1 ############
