@@ -19,13 +19,13 @@ func (*WechatPay) Pay(money string) string {
 }
 
 func PaymentFactory(method string) Payment {
-	if method == "alipay" {
+	switch method {
+	case "alipay":
 		return &Alipay{}
-	} else if method == "wechat" {
+	case "wechat":
 		return &WechatPay{}
-	} else {
-		return nil
 	}
+	return nil
 }
 
 func main() {
