@@ -14,6 +14,7 @@ func NewAPI(str string) API {
 		return &English{}
 	} else if str == "cn" {
 		return &Chinese{}
+		// step 3
 	} else if str == "jp" {
 		return &Japanese{}
 	} else {
