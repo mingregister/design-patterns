@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# author: zmhuang
+# author:mingregister
 # date：2020-04-11,17:56 
 
 from abc import ABCMeta, abstractclassmethod
