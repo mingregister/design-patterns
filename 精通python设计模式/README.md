@@ -1,0 +1,1 @@
+此目录下的代码源自: [精通Python设计模式](https://github.com/youngsterxyf/mpdp-code)
