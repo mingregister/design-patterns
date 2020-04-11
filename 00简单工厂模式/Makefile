@@ -5,6 +5,7 @@ all: build run clean
 
 
 build:
+	go fmt
 	go build
 .PHONY: build
 

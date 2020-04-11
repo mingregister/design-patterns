@@ -22,22 +22,24 @@ func NewAPI(str string) API {
 }
 
 type Chinese struct{}
+
 func (*Chinese) Say(name string) string {
-	return "你好" + name
+	return "你好" + " " + name
 }
 
 type English struct{}
 
 func (*English) Say(name string) string {
-	return "hello" + name
+	return "hello" + " " + name
 }
 
 // 如果你要扩展，
 // step 1
 type Japanese struct{}
+
 // step 2
 func (*Japanese) Say(name string) string {
-	return "日本人你好" + name
+	return "日本人你好" + " " + name
 }
 
 func main() {
