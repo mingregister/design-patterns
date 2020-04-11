@@ -13,6 +13,9 @@ https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
 ### python代码: 
     [精通Python设计模式](https://github.com/youngsterxyf/mpdp-code)
+### Go代码: 
+    https://github.com/bvwells/go-patterns
+    https://github.com/HCLAC/DesignPattern
 
 ### 六大原则
 总原则：开闭原则（Open Close Principle）
