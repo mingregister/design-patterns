@@ -1,4 +1,4 @@
-PKG_NAME = simple-factory-luffycity
+PKG_NAME = simple-factory
 
 all: build run clean
 .PHONY: all

@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//from abc import ABCMeta, abstractclassmethod 
+//from abc import ABCMeta, abstractclassmethod
 
 // // 相当于抽象类
 // class API(metaclass=ABCMeta):
