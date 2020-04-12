@@ -4,6 +4,22 @@ import (
 	"fmt"
 )
 
+// # from abc import ABCMeta, abstractclassmethod 
+
+// # class Operation(metaclass=ABCMeta):
+// # 	def __init__(self, a, b):
+// # 		self.a = a
+// # 		self.b = b
+
+// # 	# @abstractclassmethod
+// # 	def SetA(self, a):
+// # 		self.a = a
+// # 	# @abstractclassmethod
+// # 	def SetB(self, b):
+// # 		self.a = b 
+// # 	@abstractclassmethod
+// # 	def GetResult(self):
+// # 		pass
 type Operation struct {
 	a float64
 	b float64
@@ -17,6 +33,9 @@ func (op *Operation) SetB(b float64) {
 	op.b = b
 }
 
+// # class AddOperation(Operation):
+// # 	def GetResult(self):
+// # 		return self.a + self.b 
 type AddOperation struct {
 	Operation
 }
@@ -25,16 +44,24 @@ func (this *AddOperation) GetResult() float64 {
 	return this.a + this.b
 }
 
+// 作为具体工厂类的*返回值*，使它不仅仅限于基本类型   // 那用结构体可以不?
 type OperationI interface {
 	GetResult() float64
 	SetA(float64)
 	SetB(float64)
 }
 
+// # class IFactory(metaclass=ABCMeta):
+// # 	@abstractclassmethod
+// # 	def CreateOperation() -> OperationI :
+// # 		pass
 type IFactory interface {
 	CreateOperation() Operation
 }
 
+// # class AddFactory(IFactory):
+// # 	def CreateOperation() -> OperationI:
+// # 		return AddOperation()
 type AddFactory struct {
 }
 
