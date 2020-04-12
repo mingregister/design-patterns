@@ -44,7 +44,7 @@ func (this *AddOperation) GetResult() float64 {
 	return this.a + this.b
 }
 
-// 作为具体工厂类的*返回值*，使它不仅仅限于基本类型   // 那用结构体可以不?
+// 作为具体工厂类的*返回值*，使它不仅仅限于基本类型 , 我个人觉得它和工厂模式是没有任何关系的，只是go的语法问题  // 那用结构体可以不?
 type OperationI interface {
 	GetResult() float64
 	SetA(float64)
