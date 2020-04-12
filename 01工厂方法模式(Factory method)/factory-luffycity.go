@@ -1,6 +1,6 @@
 package main
 
-import _ "fmt"
+import "fmt"
 
 type Payment interface {
 	Pay(money string) string
@@ -25,20 +25,25 @@ type PaymentFactory interface {
 type AlipayFactory struct{}
 
 func (ap *AlipayFactory) Create_payment() Payment {
-	return &Alipay{}
+	return &Alipay{
+		// money: string,  // remain here as an example.
+	}
 }
 
 type WechatPayFactory struct{}
 
-func (ap *WechatPayFactory) Create_payment() Payment {
+func (wp *WechatPayFactory) Create_payment() Payment {
 	return &WechatPay{}
 }
 
 func main() {
 	money := "100"
-	pay := AlipayFactory()
+	pay := &AlipayFactory{}
+	// // pay := AlipayFactory()   // 不是这样调用的，会报如下错误
+	//      ./factory-luffycity.go:42:22: missing argument to conversion to AlipayFactory: AlipayFactory())
 	p := pay.Create_payment()
 	m := p.Pay(money)
+	fmt.Println(m)
 }
 
 // func main() {
