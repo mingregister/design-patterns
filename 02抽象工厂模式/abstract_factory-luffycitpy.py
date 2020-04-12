@@ -2,7 +2,7 @@
 
 from abc import ABCMeta, abstractclassmethod
 
-#  ----------抽象产品-----------------
+#  ----------抽象产品: 可以有多个. 对于工厂模式，就只有一个-----------------
 class PhoneShell(metaclass=ABCMeta):
     @abstractclassmethod    
     def show_shell(self):
