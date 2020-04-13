@@ -1,5 +1,6 @@
-
-from abc import abstractmethod, ABCMeta 
+# -*- coding:utf-8 -*-
+# author: mingregister
+# date：2020-04-13,22:18 
 
 class Singleton:
     def __new__(cls, *args, **kwargs):
