@@ -82,3 +82,4 @@ au BufWinEnter * silent loadview
 
 iab abc from abc import ABCMeta, abstractclassmethod
 iab abs abstractclassmethod
+iab fmp fmt.Println(
