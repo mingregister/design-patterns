@@ -13,8 +13,11 @@ https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
 ### python代码: 
     [精通Python设计模式](https://github.com/youngsterxyf/mpdp-code)
+
     https://python-3-patterns-idioms-test.readthedocs.io/en/latest/PatternConcept.html
+
     https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_singleton.htm
+    
     https://sourcemaking.com/design_patterns/flyweight
     
 ### Go代码: 
