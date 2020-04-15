@@ -94,9 +94,9 @@ type Phone struct{
 
 // func(p *Phone)Show_info(shell PhoneShell, cpu CPU, os OS){
 func(p *Phone)Show_info(){
-    fmt.Println(p.cpu.Show_cpu())
-    fmt.Println(p.os.Show_os())
-    fmt.Println(p.shell.Show_shell())
+    p.cpu.Show_cpu()
+    p.os.Show_os()
+    p.shell.Show_shell()
 }
 
 
@@ -104,7 +104,7 @@ func Make_phone(factory PhoneFactory)Phone{
     cpu := factory.Make_cpu()
     os := factory.Make_os()
     shell := factory.Make_shell()
-    return Phone(cpu, os, shell)
+    return Phone{cpu, os, shell}
     // return Phone()
 }
 
