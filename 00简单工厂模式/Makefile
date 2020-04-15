@@ -1,4 +1,5 @@
-PKG_NAME = simple-factory-luffycity
+GO_PKG					= simple-factory-luffycity
+GO_BUILD_RECIPE         = GOOS=linux go build
 
 all: build run clean
 .PHONY: all
@@ -6,17 +7,17 @@ all: build run clean
 
 build:
 	go fmt
-	go build
+	$(GO_BUILD_RECIPE)
 .PHONY: build
 
 run:
 	$(shell echo "############### 开始执行go命令 ###################")
-	./${PKG_NAME}
+	./${GO_PKG}
 	$(shell echo "############### go命令执行完成 ###################")
 .PHONY: run
 
 
 clean:
-	rm -rf ${PKG_NAME} 
+	rm -rf ${GO_PKG} 
 .PHONY: clean
-	
+
