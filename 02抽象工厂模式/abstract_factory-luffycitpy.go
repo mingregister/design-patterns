@@ -13,14 +13,14 @@ type CPU interface {
 }
 
 type OS interface {
-    show_CPU()
+    Show_os()
 }
 
 
 type PhoneFactory interface {
-    Make_shell()
-    Make_cpu()
-    Make_os()
+    Make_shell() PhoneShell
+    Make_cpu()   CPU
+    Make_os()    OS
 }
 
 type SmallShell struct{}
@@ -66,26 +66,50 @@ func(so *IOS)Show_os(){
 }
 
 type MiFactory struct {}
-func (mf *MiFactory)Make_cpu()PhoneFactory{
-    return &SnapDragonCPU{}
+func (mf *MiFactory)Make_cpu()CPU{
+    // return &SnapDragonCPU{}
+    return new(SnapDragonCPU)
 }
 
 
-func (mf *MiFactory)Make_os()PhoneFactory{
-    return &Android{}
+func (mf *MiFactory)Make_os()OS{
+    // return &Android{}
+    return new(Android)
 }
 
-func (mf *MiFactory)Make_shell()PhoneFactory{
-    return &BigShell{}
+func (mf *MiFactory)Make_shell()PhoneShell{
+    // return &BigShell{}
+    return new(BigShell)
 }
 
 // type HuaweiFactory struct {}
 // type IPhoneFactory struct {}
 
 // client
-type Phone struct{}
-func(p *Phone)Show_info(shell PhoneShell, cpu CPU, os OS){
-    fmt.Println("aa")
+type Phone struct{
+    cpu CPU
+    os OS
+    shell PhoneShell
 }
 
+// func(p *Phone)Show_info(shell PhoneShell, cpu CPU, os OS){
+func(p *Phone)Show_info(){
+    fmt.Println(p.cpu.Show_cpu())
+    fmt.Println(p.os.Show_os())
+    fmt.Println(p.shell.Show_shell())
+}
+
+
+func Make_phone(factory PhoneFactory)Phone{
+    cpu := factory.Make_cpu()
+    os := factory.Make_os()
+    shell := factory.Make_shell()
+    return Phone(cpu, os, shell)
+    // return Phone()
+}
+
+func main(){
+   p1 := Make_phone(&MiFactory{})
+   p1.Show_info()
+}
 
