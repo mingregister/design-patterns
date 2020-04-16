@@ -6,8 +6,9 @@ from abc import ABCMeta, abstractclassmethod
 
 
 class Command(metaclass=ABCMeta):
+    # @classmethod也不需要self参数，但第一个参数需要是表示自身类的cls参数。
     @abstractclassmethod
-    def execute(self, *args, **kwargs):
+    def execute(cls, *args, **kwargs):
         pass
 
 class Restaurant():
