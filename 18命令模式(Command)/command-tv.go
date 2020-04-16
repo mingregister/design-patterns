@@ -5,7 +5,7 @@ import (
 )
 
 type button struct {
-    command command
+	command command
 }
 
 func (b *button) press() {
@@ -13,60 +13,58 @@ func (b *button) press() {
 }
 
 type command interface {
-    execute()
+	execute()
 }
 
 type onCommand struct {
-    device device
+	device device
 }
 
 func (c *onCommand) execute() {
-    c.device.on()
+	c.device.on()
 }
 
 type offCommand struct {
-    device device
+	device device
 }
 
 func (c *offCommand) execute() {
-    c.device.off()
+	c.device.off()
 }
 
 type device interface {
-    on()
-    off()
+	on()
+	off()
 }
 
 type tv struct {
-    isRunning bool
+	isRunning bool
 }
 
 func (t *tv) on() {
-    t.isRunning = true
-    fmt.Println("Turning tv on")
+	t.isRunning = true
+	fmt.Println("Turning tv on")
 }
 
 func (t *tv) off() {
-    t.isRunning = false
-    fmt.Println("Turning tv off")
+	t.isRunning = false
+	fmt.Println("Turning tv off")
 }
 
-
-
 func main() {
-    tv := &tv{}
-    onCommand := &onCommand{
-        device: tv,
-    }
-    offCommand := &offCommand{
-        device: tv,
-    }
-    onButton := &button{
-        command: onCommand,
-    }
-    onButton.press()
-    offButton := &button{
-        command: offCommand,
-    }
-    offButton.press()
+	tv := &tv{}
+	onCommand := &onCommand{
+		device: tv,
+	}
+	offCommand := &offCommand{
+		device: tv,
+	}
+	onButton := &button{
+		command: onCommand,
+	}
+	onButton.press()
+	offButton := &button{
+		command: offCommand,
+	}
+	offButton.press()
 }
