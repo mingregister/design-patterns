@@ -56,7 +56,7 @@ class Receiver:
     """
 
     def action(self):
-        Print("I have reciver your request, and i am starting it...")
+        print("I have reciver your request, and i am starting it...")
 
 
 def main():
