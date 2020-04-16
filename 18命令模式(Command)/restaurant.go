@@ -6,31 +6,16 @@ import (
     "fmt"
 )
 
+
 // 抽象command
 type Command interface {
     execute()
 }
 
-// type Command interface {
-//     execute() error
-// }
 
-// The restaurant contains the total dishes and the total cleaned dishes
-type Restaurant struct {
-    TotalDishes   int
-    CleanedDishes int
-}
 
-// `NewRestaurant` constructs a new restaurant instance with 10 dishes,
-// all of them being clean
-func NewResteraunt() *Restaurant {
-    const totalDishes = 10
-    return &Restaurant{
-        TotalDishes:   totalDishes,
-        CleanedDishes: totalDishes,
-    }
-}
 
+// 具体Command
 // The MakePizzaCommand is a struct which contains
 // the number of pizzas to make, as well as the
 // restaurant as its attributes
@@ -71,6 +56,14 @@ func (c *CleanDishesCommand) execute() {
 
 
 
+
+// Invoker
+// The restaurant contains the total dishes and the total cleaned dishes
+type Restaurant struct {
+    TotalDishes   int
+    CleanedDishes int
+}
+
 func (r *Restaurant) MakePizza(n int) Command {
     return &MakePizzaCommand{
         restaurant: r,
@@ -92,6 +85,9 @@ func (r *Restaurant) CleanDishes() Command {
 }
 
 
+
+
+// Receiver
 // A Cook comes with their list of commands as attributes
 type Cook struct {
     // 构造一个Command的slice，在初始化时传入.
@@ -106,6 +102,18 @@ func (c *Cook) executeCommands() {
     }
 }
 
+
+
+
+// `NewRestaurant` constructs a new restaurant instance with 10 dishes,
+// all of them being clean
+func NewResteraunt() *Restaurant {
+    const totalDishes = 10
+    return &Restaurant{
+        TotalDishes:   totalDishes,
+        CleanedDishes: totalDishes,
+    }
+}
 
 func main() {
     // initialize a new resaurant
@@ -144,5 +152,3 @@ func main() {
         c.executeCommands()
     }
 }
-
-
