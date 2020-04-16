@@ -1,5 +1,7 @@
 package main
 
+// https://www.sohamkamani.com/golang/command-pattern/
+
 import (
     "fmt"
 )
