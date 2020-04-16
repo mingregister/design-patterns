@@ -20,9 +20,9 @@ func(i *Invoker)Store_command(command Command){
 }
 
 func(i *Invoker)Execute_commands(){
-	for cmd in cmd{
-		cmd.Execute()
-	}
+    for _, cmd := range p.cmds {  
+        cmd.Execute()
+    }  
 }
 
 type Command interface{
