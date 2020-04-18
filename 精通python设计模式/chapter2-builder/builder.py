@@ -9,6 +9,7 @@ PizzaSauce = Enum('PizzaSauce', 'tomato creme_fraiche')
 PizzaTopping = Enum('PizzaTopping', 'mozzarella double_mozzarella bacon ham mushrooms red_onion oregano')
 STEP_DELAY = 3          # 考虑是示例，单位为秒
 
+# 这里没有一个AbstractBuilder
 
 class Pizza:
 
@@ -27,7 +28,7 @@ class Pizza:
         time.sleep(STEP_DELAY)
         print('done with the {} dough'.format(self.dough.name))
 
-
+# ConcreateBuilder
 class MargaritaBuilder:
 
     def __init__(self):
@@ -59,7 +60,7 @@ class MargaritaBuilder:
         self.progress = PizzaProgress.ready
         print('your margarita is ready')
 
-
+# ConcreateBuilder
 class CreamyBaconBuilder:
 
     def __init__(self):
@@ -93,7 +94,7 @@ class CreamyBaconBuilder:
         self.progress = PizzaProgress.ready
         print('your creamy bacon is ready')
 
-
+# Director
 class Waiter:
 
     def __init__(self):

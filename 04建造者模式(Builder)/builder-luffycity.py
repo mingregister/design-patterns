@@ -4,6 +4,7 @@
 
 from abc import ABCMeta, abstractclassmethod
 
+# Product
 class Player():
     def __init__(self, face=None, body=None, arm=None, leg=None):
         self.face = face
@@ -14,6 +15,7 @@ class Player():
     def __str__(self):
         return "%s, %s, %s, %s" %(self.face, self.body, self.arm, self.leg)
 
+# Builder
 class PlayerBuilder(metaclass=ABCMeta):
     @abstractclassmethod
     def build_face(self):
@@ -31,14 +33,15 @@ class PlayerBuilder(metaclass=ABCMeta):
     def build_leg(self):
         pass
 
-
+# ConcreteBuilder
 class SexyGrilBuiler(PlayerBuilder):
     def __init__(self):
         self.player = Player()
 
+    # ConcreteBuilder的每一个方法理论上
+    # 都应该要建造出产品的一某一部分？
     def build_face(self):
         self.player.face = "beautiful face"
-
 
     def build_body(self):
         self.player.body = "beautiful body"
@@ -50,7 +53,7 @@ class SexyGrilBuiler(PlayerBuilder):
         self.player.leg = "beautiful leg"
 
 
-
+# ConcreteBuilder
 class MonsterBuiler(PlayerBuilder):
     def __init__(self):
         self.player = Player()
@@ -67,6 +70,7 @@ class MonsterBuiler(PlayerBuilder):
     def build_leg(self):
         self.player.leg = "argly leg"
 
+# Director
 class PlayerDirector():   # 用于控制组装顺序 
     def build_player(self, builder):
         builder.build_body()

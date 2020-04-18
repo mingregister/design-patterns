@@ -3,12 +3,13 @@
 
 ### 角色：
 1. 抽象建造者(Builder)
-2. 具体建造者(Concrete Builder)
+2. 具体建造者(Concrete Builder): 每一个方法*都应该*能建造Product的一部分属性。
 3. 指挥者(Director)
 4. 产品(Product)
+*The "director" invokes "builder" services as it interprets the external format. The "builder" creates part of the complex object each time it is called and maintains all intermediate state. When the product is finished, the client retrieves the result from the "builder".*
 
 ### 对比工厂模式
-建造者模式与抽象工厂模式相似，也用来创建复杂对象。主要区别在于建行者模式着重一步步构造一个复杂对象，而抽象工厂模式着重于多个系列的产品的对象。
+建造者模式与抽象工厂模式相似，也用来创建复杂对象。主要区别在于建行者模式着重一步步构造一个复杂对象，而抽象工厂模式着重于多个系列的产品的对象。--对应现实场景中有什么么?
 
 
 
