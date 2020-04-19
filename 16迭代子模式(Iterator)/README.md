@@ -23,3 +23,11 @@
 * Iterator can traverse a Composite. Visitor can apply an operation over a Composite.
 * Polymorphic Iterators rely on Factory Methods to instantiate the appropriate Iterator subclass.
 * Memento is often used in conjunction with Iterator. An Iterator can use a Memento to capture the state of an iteration. The Iterator stores the Memento internally.
+
+
+### python Concept
+可迭代对象：
+    可迭代对象要么实现了能返回迭代器的 iter 方法，要么实现了 getitem 方法而且其参数是从零开始的索引。
+
+迭代器：
+    迭代器是实现了无参数的 next 方法，返回下一个元素，如果没有元素了，那么抛出 StopIteration 异常；并且实现iter 方法，返回迭代器本身。
