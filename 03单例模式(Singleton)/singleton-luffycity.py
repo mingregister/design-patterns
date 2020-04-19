@@ -14,7 +14,7 @@ class MyClass(Singleton):
 
 # 这里即使返回的是*同一个实例*，但是还是会再初始化一次?
 a = MyClass(10)
-b = MyClass(20)
+b = MyClass(20)      # 这里是有问题的，应该这里就不能再实例化，即：print(b.a)应该是10才对。
 
 print(a.a)   # 20
 print(b.a)   # 20

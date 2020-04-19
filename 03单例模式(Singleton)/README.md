@@ -30,3 +30,8 @@
 3. 双重检查式
 4. 静态内部类式
 5. 枚举式(推荐：1.写法简洁  2.线程安全  3.防止被破坏)
+
+
+
+### python
+https://stackoverflow.com/questions/6760685/creating-a-singleton-in-python

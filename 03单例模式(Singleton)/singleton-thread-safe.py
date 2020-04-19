@@ -66,3 +66,9 @@ if __name__ == "__main__":
     process2 = Thread(target=test_singleton, args=("BAR",))
     process1.start()
     process2.start()
+
+    s1 = Singleton('s1')
+    print(s1.value)
+
+    s2 = Singleton('s2')
+    print(s2.value)
