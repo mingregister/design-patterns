@@ -42,6 +42,11 @@ class Singleton(metaclass=SingletonMeta):
     def __init__(self, a):
         self.a = a
 
+    # # 不能继承/覆盖SingletonMeta的__call__方法?
+    # def __call__(self):
+    #     print('i am in Singleton call')
+    #     return super().__call__(*args, **kwargs)
+
     def some_business_logic(self):
         """
         Finally, any singleton should define some business logic, which can be
@@ -55,7 +60,8 @@ if __name__ == "__main__":
     # The client code.
 
     s1 = Singleton('aaaa')
-    s2 = Singleton('bbbb')
+    # s2的init方法是没有被执行的。
+    s2 = Singleton('bbbb')   
 
     if id(s1) == id(s2):
         print("Singleton works, both variables contain the same instance.")

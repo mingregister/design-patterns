@@ -14,7 +14,7 @@ class MetaPerson(type):
 
     def __call__(cls, *args, **kwargs):
         print('i am in MetaPerson call')
-        return super().__call__(*args, **kwargs)
+        # return super().__call__(*args, **kwargs)
 
 
 class person(metaclass=MetaPerson):
