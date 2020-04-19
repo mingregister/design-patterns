@@ -12,6 +12,7 @@ class MyClass(Singleton):
     def __init__(self, a):
         self.a = a 
 
+# 这里即使返回的是*同一个实例*，但是还是会再初始化一次?
 a = MyClass(10)
 b = MyClass(20)
 

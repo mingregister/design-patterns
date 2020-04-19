@@ -23,6 +23,11 @@ class SingletonMeta(type):
 
 
 class Singleton(metaclass=SingletonMeta):
+
+    # 这里的init函数要怎么写，不能有么?
+    # def __init__(self):
+        # xx
+
     def some_business_logic(self):
         """
         Finally, any singleton should define some business logic, which can be
