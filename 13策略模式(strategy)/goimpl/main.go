@@ -1,5 +1,7 @@
 package main
 
+// https://golangbyexample.com/strategy-design-pattern-golang/
+
 func main() {
 	lfu := &lfu{}
 	cache := initCache(lfu)
