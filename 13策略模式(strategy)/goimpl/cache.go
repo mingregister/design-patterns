@@ -1,5 +1,6 @@
 package main
 
+// Context (Cache) embeds the strategy(evictionAlgo)
 type cache struct {
 	storage      map[string]string
 	evictionAlgo evictionAlgo
@@ -18,6 +19,7 @@ func initCache(e evictionAlgo) *cache {
 }
 
 func (c *cache) setEvictionAlgo(e evictionAlgo) {
+	// 我可以通过结构体中的参数来传递*类实例*的参数，相当于python中的self.evictionAlog = e
 	c.evictionAlgo = e
 }
 
