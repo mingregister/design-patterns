@@ -21,6 +21,7 @@ https://design-patterns.readthedocs.io/zh_CN/latest/index.html
     https://sourcemaking.com/design_patterns/flyweight
     
 ### Go代码: 
+    https://golangbyexample.com/all-design-patterns-golang/
     https://github.com/bvwells/go-patterns
     https://github.com/HCLAC/DesignPattern
 
