@@ -81,6 +81,9 @@ class Manager(object):
 
 root = RootLogger(WARNING)
 Logger.root = root
+# Q: 如果第二个文件再import怎么办? 是再import的时候，并没有*实际执行import*么?
+# A: 是的，第二次文件中再import的时候，应该是真的没有*实际执行import*，在两个文件中id(logging)是可以看到同一个输出的，
+#    which means, 他们是同一个对象。
 Logger.manager = Manager(Logger.root)
 
 
