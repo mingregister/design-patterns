@@ -11,7 +11,6 @@ https://blog.csdn.net/weixin_42139375/article/details/82503232
 
 https://design-patterns.readthedocs.io/zh_CN/latest/index.html
 
-
 # 六大原则(SOLID)
 
 1、单一职责原则(Single Responsibility Principle)  
