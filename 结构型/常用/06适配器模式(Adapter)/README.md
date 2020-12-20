@@ -41,4 +41,4 @@
 
 
 ### 相关代码实现
-1. requests
+1. requests (requests\adapters.py)
