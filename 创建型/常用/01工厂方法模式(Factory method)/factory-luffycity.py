@@ -73,3 +73,14 @@ class BankPayFactory(PaymentFactory):
 pf = BankPayFactory()
 p = pf.create_payment()
 p.pay(100)
+
+
+# 解决的问题
+if type == 'bank':
+    payment = BankPay
+elif type == 'alipay':
+    payment = Alipay
+elif type == 'wechatpay':
+    payment = WechatPay
+
+payment.pay()

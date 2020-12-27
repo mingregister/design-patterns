@@ -18,7 +18,7 @@ class Subject:
         self._subject_state = None
 
     def attach(self, observer):
-        # 现在没有看懂这里是做什么。
+        # 告诉订阅者,它订阅了什么. 让它可以回调.
         observer._subject = self
         self._observers.add(observer)
 

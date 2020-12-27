@@ -38,7 +38,7 @@ class VirtualProxy(Subject):
     
     def get_content(self):            # 这个逻辑有问题的，会读取不到最新的内容。
         if not self.subj:
-            self.subj = RealSubject(self.filename)
+            self.subj = RealSubject(self.filename)   # 依赖注入
         return self.subj.get_content()
 
     def set_content(self, content):    # 这个逻辑有问题的，会读取不到最新的内容。
